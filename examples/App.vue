@@ -1,10 +1,12 @@
 <template>
-    <div id="app">test</div>
+    <div id="app">
+        <LineCharts />
+    </div>
 </template>
 <script>
-// import SignCanvas from "../packages";
+// import { LineCharts } from "../packages";
 export default {
-    // components: { SignCanvas },
+    // components: { LineCharts },
     data() {
         return {};
     },
