@@ -4,9 +4,9 @@
     </div>
 </template>
 <script>
-// import { LineCharts } from "../packages";
+import { LineCharts } from "../packages";
 export default {
-    // components: { LineCharts },
+    components: { LineCharts },
     data() {
         return {};
     },

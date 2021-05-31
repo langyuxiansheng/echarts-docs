@@ -27,6 +27,8 @@ export default {
          */
         init() {
 
+             // 基于准备好的dom，初始化echarts实例
+            let myChart = echarts.init(document.getElementById('charts-container'));
             let hs = function() {
                 let arr = [];
                 for (let index = 0; index <= 24; index++) {
@@ -34,61 +36,46 @@ export default {
                 }
                 return arr;
             };
-
-            // 基于准  备好的dom，初始化echarts实例
-            let myChart = echarts.init(document.getElementById('charts-container'));
             var option = {
                 grid: {
-                    show: true,
-                    bottom: 20,
-                    top: 20,
-                    left: 40,
-                    right: 20
+                    bottom: 25,
+                    top: 10
                 },
                 xAxis: {
                     type: 'category',
-                    axisTick: { //刻度设置
+                    data: hs(),
+                    axisTick: {
                         show: false
                     },
                     axisLabel: { //坐标文字
                         color: '#151515'
-                    },
-                    axisLine:{
-                        lineStyle:{//轴线的样色
-                            color: '#E8EFF1'
-                        }
-                    },
-                    data: hs()
+                    }
                 },
                 yAxis: {
                     type: 'value',
-                    splitNumber: 4,
-                    axisLabel: { //坐标文字
-                        color: '#151515',
-                        formatter: function (value) {
-                            return `${value} ℃`;
-                        }
-                    },
-                    splitLine: {
-                        lineStyle: {  //y轴分隔线样式设置
-                            color: '#004C63',   //颜色
-                            type: 'dashed', //虚线
-                        }
-                    }
+                    // splitNumber: 4,
+                    // axisLabel: { //坐标文字
+                    //     color: '#151515',
+                    //     formatter: function (value) {
+                    //         return `${value} ℃`;
+                    //     }
+                    // },
+                    // splitLine: {
+                    //     lineStyle: {
+                    //         color: '#004C63',
+                    //         type: 'dashed'
+                    //     }
+                    // }
                 },
                 series: [{
-                    data: [50, 23, 24, 18, 35, 14, 26],
+                    data: [10, 20, 34, 21, 5, 14, 26],
                     type: 'line',
-                    lineStyle: {    //折线样式
+                    lineStyle: {
                         color: '#004C63'
-                    },
-                    itemStyle:{ //这里设置的拐点颜色
-                        color: '#004C63'
-                    },
-                    symbol: "circle",  //标记的图形（拐点）
-                    symbolSize: 6,  //大小
+                    }
                 }]
             };
+
             myChart.setOption(option);
         }
     }
@@ -100,6 +87,5 @@ export default {
     width: 80%;
     margin: 100px auto;
     height: 410px;
-    // border: 1px solid #f00;
 }
 </style>
