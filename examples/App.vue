@@ -1,14 +1,16 @@
 <template>
     <div id="app">
-        <LineCharts />
+       <component :is='active'></component>
     </div>
 </template>
 <script>
-import { LineCharts } from "../packages";
+import { LineCharts, BarCharts } from "../packages";
 export default {
-    components: { LineCharts },
+    components: { LineCharts, BarCharts },
     data() {
-        return {};
+        return {
+            active: 'BarCharts'
+        };
     },
     methods: {},
 };

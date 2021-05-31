@@ -1,5 +1,5 @@
 <template>
-    <div id="charts-container" class="charts-container" />
+    <div :id="chartId" class="charts-container" />
 </template>
 <script>
 // 引入 echarts 核心模块，核心模块提供了 echarts 使用必须要的接口。
@@ -15,7 +15,7 @@ export default {
     name: "LineCharts",
     data() {
         return {
-
+            chartId: `chartId-${Math.random().toString(36).substr(2).toLocaleUpperCase()}`
         };
     },
     mounted() {
@@ -36,7 +36,7 @@ export default {
             };
 
             // 基于准  备好的dom，初始化echarts实例
-            let myChart = echarts.init(document.getElementById('charts-container'));
+            let myChart = echarts.init(document.getElementById(this.chartId));
             var option = {
                 grid: {
                     show: true,
