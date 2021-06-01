@@ -49,11 +49,10 @@ export default {
                     containLabel: true
                 },
                 xAxis: {
-                    type: 'value',
-                    boundaryGap: [0, 0.01]
+                    type: 'category',
                 },
                 yAxis: {
-                    type: 'category',
+                    type: 'value',
                     data: ['依依', '子怡', '婷婷', '静初', '都灵', '灿灿', '菲茗']
                 },
                 series: [
